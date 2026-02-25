@@ -5,6 +5,7 @@ Uma calculadora de linha de comando desenvolvida em Python, focada em acessibili
 ## Recursos
 
 ### 1. Calculadora Básica
+
 Permite a avaliação de expressões matemáticas complexas diretamente na linha de comando.
 
 - **Funções Trigonométricas:** `sin()`, `cos()`, `tan()`.
@@ -14,6 +15,7 @@ Permite a avaliação de expressões matemáticas complexas diretamente na linha
 - **Memória:** A variável `ans` armazena o último resultado para ser usado em cálculos subsequentes.
 
 ### 2. Calculadora de Matrizes
+
 Um conjunto de ferramentas para álgebra linear, ativado com o prefixo `mat`.
 
 - **Definição de Matrizes:** Crie e armazene matrizes com nomes personalizados (ex: `mat def A`).
@@ -23,10 +25,12 @@ Um conjunto de ferramentas para álgebra linear, ativado com o prefixo `mat`.
 - **Memória:** A matriz `ANS` guarda o resultado da última operação.
 
 ### 3. Recursos de Acessibilidade
+
 - **Saída Amigável:** A impressão de matrizes é formatada para ser clara e legível por leitores de tela, descrevendo as dimensões e lendo linha por linha.
 - **Comandos Claros:** A sintaxe é simples e consistente, com mensagens de erro detalhadas para guiar o usuário.
 
 ### 4. Comandos Gerais
+
 - `help`: Exibe a ajuda completa para os modos básico e de matriz.
 - `status`: Mostra o modo de ângulo atual e os últimos resultados salvos (`ans` e `ANS`).
 - `arquivo [nome]`: Salva um log de todas as expressões e resultados em um arquivo de texto.
@@ -34,20 +38,14 @@ Um conjunto de ferramentas para álgebra linear, ativado com o prefixo `mat`.
 
 ## Como Usar
 
-1.  **Pré-requisitos:** Certifique-se de ter o Python instalado, juntamente com a biblioteca `numpy`.
-    ```shell
-    pip install numpy
-    ```
+1.  **Pré-requisitos:** Instalar o executavel da calculadora em um lugar de fácil acesso.
 
-2.  **Executar a Calculadora:**
-    Navegue até o diretório do projeto e execute o arquivo `main.py`.
-    ```shell
-    python main.py
-    ```
+2.  **Executar a Calculadora**
 
 ### Exemplos de Uso
 
 **Modo Básico:**
+
 ```
 [RAD]> (sin(pi/2) + 5) * 2
 Resultado: 12.0
@@ -56,6 +54,7 @@ Resultado: 4.0
 ```
 
 **Modo Matriz:**
+
 ```
 [RAD]> mat def A
 Digite o número de linhas para a Matriz A: 2
