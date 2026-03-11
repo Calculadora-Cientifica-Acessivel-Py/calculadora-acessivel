@@ -16,7 +16,7 @@ Este manual e a aplicação foram projetados seguindo estas premissas:
 
 ## 📖 Sumário
 - [Manual do Usuário: Calculadora Acessível](#manual-do-usuário-calculadora-acessível)
-  - [♿ Compromisso com a Acessibilidade](#-compromisso-com-a-acessibilidade)
+  - [🧑‍🦯 Compromisso com a Acessibilidade](#-compromisso-com-a-acessibilidade)
   - [📖 Sumário](#-sumário)
   - [1. Primeiros Passos](#1-primeiros-passos)
     - [Como Iniciar](#como-iniciar)
