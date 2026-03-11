@@ -4,7 +4,7 @@ A **Calculadora Acessível** é uma aplicação de linha de comando (CLI) desenv
 
 ---
 
-## ♿ Compromisso com a Acessibilidade
+## 🧑‍🦯 Compromisso com a Acessibilidade
 
 Este manual e a aplicação foram projetados seguindo estas premissas:
 1.  **Navegação Previsível**: Comandos curtos e consistentes.
