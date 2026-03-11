@@ -37,7 +37,7 @@ def limpar_resultado(valor):
     
     return valor
 
-def processar_calculo_basico(expressao, ultimo_resultado_basico, modo_angulo, log_file):
+def processar_calculo_basico(expressao, ultimo_resultado_basico, modo_angulo, log_file, imprimir=True):
     """
     Tenta avaliar a expressão básica.
     Retorna o novo resultado em caso de sucesso, ou o último resultado em caso de falha.
@@ -60,9 +60,10 @@ def processar_calculo_basico(expressao, ultimo_resultado_basico, modo_angulo, lo
         # Limpa apenas para exibição e armazenamento do ans
         resultado = limpar_resultado(resultado_bruto)
         
-        print(f"Resultado: {resultado}")
+        if imprimir:
+            print(f"Resultado: {resultado}")
 
-        if log_file:
+        if log_file and imprimir: # Apenas loga se for para imprimir (evita duplicação em funções)
             with open(log_file, "a", encoding="utf-8") as f:
                 f.write(f"[{modo_angulo.upper()}] {expressao} = {resultado}\n")
         
@@ -70,18 +71,19 @@ def processar_calculo_basico(expressao, ultimo_resultado_basico, modo_angulo, lo
 
     # Erros específicos do modo básico
     except ZeroDivisionError:
-        print("Erro: Tentativa de divisão por zero.")
+        if imprimir: print("Erro: Tentativa de divisão por zero.")
     except SyntaxError:
-        print("Erro: Expressão mal formada. Verifique parênteses ou operadores.")
+        if imprimir: print("Erro: Expressão mal formada. Verifique parênteses ou operadores.")
     except NameError as ne:
-        try:
-            nome_invalido = str(ne).split("'")[1]
-        except:
-            nome_invalido = "(desconhecido)"
-        print(f"Erro: Função ou constante '{nome_invalido}' não reconhecida. Digite 'help'.")
+        if imprimir:
+            try:
+                nome_invalido = str(ne).split("'")[1]
+            except:
+                nome_invalido = "(desconhecido)"
+            print(f"Erro: Função ou constante '{nome_invalido}' não reconhecida. Digite 'help'.")
     except TypeError:
-         print("Erro: Tipo de argumento inválido (ex: sin('texto')).")
+         if imprimir: print("Erro: Tipo de argumento inválido (ex: sin('texto')).")
     except Exception as e:
-        print(f"Erro inesperado no cálculo: {e}")
+        if imprimir: print(f"Erro inesperado no cálculo: {e}")
     
     return ultimo_resultado_basico

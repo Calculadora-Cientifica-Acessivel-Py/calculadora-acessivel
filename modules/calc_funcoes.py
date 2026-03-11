@@ -70,7 +70,6 @@ def processar_comando_funcao(expressao, armazem_funcoes, ultimo_resultado_basico
         try:
             if '(' in expressao and ')' in expressao:
                 # Extrai nome da função e o valor entre parênteses
-                # Ex: 'fn f(2)' -> nome 'f', valor '2'
                 inicio_par = expressao.find('(')
                 fim_par = expressao.rfind(')')
                 
@@ -82,18 +81,16 @@ def processar_comando_funcao(expressao, armazem_funcoes, ultimo_resultado_basico
                     var_nome = fn_dados['var']
                     corpo_exp = fn_dados['exp']
 
-                    # Avalia o valor passado (pode ser uma expressão como 'pi/2')
+                    # Avalia o valor passado silenciosamente
                     val_avaliado = calc_basica.processar_calculo_basico(
-                        valor_str, ultimo_resultado_basico, modo_angulo, None
+                        valor_str, ultimo_resultado_basico, modo_angulo, None, imprimir=False
                     )
 
-                    # Substitui a variável no corpo da função
-                    # Usamos um truque de ambiente para o eval
+                    # Substitui a variável no corpo da função e avalia
                     expressao_final = corpo_exp.replace(var_nome, f"({val_avaliado})")
                     
-                    print(f"Avaliando {nome_chamada}({val_avaliado})...")
                     resultado = calc_basica.processar_calculo_basico(
-                        expressao_final, ultimo_resultado_basico, modo_angulo, None
+                        expressao_final, ultimo_resultado_basico, modo_angulo, None, imprimir=True
                     )
                     return resultado
                 else:
