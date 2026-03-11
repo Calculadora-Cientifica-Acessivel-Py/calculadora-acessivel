@@ -67,7 +67,7 @@ O resultado do último cálculo básico é salvo na variável `ans`.
 - Em seguida, digite `ans * 2`. O resultado será `40`.
 
 ### Funções e Constantes
-- **Constantes**: `pi` e `e`.
+- **Constantes matemática**: `pi` e `e`, onde e refere-se ao número de Euler sendo e=2,718281828.
 - **Trigonometria**: `sin()`, `cos()`, `tan()`.
 - **Raiz e Potência**: `sqrt(16)` (raiz), `pow(2, 3)` (2 elevado a 3) ou `2**3`.
 - **Logaritmos**: `log(100)` (base 10), `ln(e)` (logaritmo natural).
