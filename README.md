@@ -1,76 +1,56 @@
-# Calculadora Acessível
+# Calculadora Acessível ♿
 
-Uma calculadora de linha de comando desenvolvida em Python, focada em acessibilidade e funcionalidade. O projeto oferece dois modos principais de operação: uma calculadora para expressões matemáticas e um módulo avançado para operações com matrizes.
+Uma calculadora de linha de comando (CLI) desenvolvida em Python, projetada especificamente para oferecer autonomia técnica a usuários de leitores de tela. O projeto une cálculos matemáticos avançados, álgebra linear e funções personalizadas com uma interface textual clara e semântica.
 
-## Recursos
+## 🌟 Principais Diferenciais
 
-### 1. Calculadora Básica
+- **Foco em Acessibilidade**: Saída de dados formatada para leitura linear (NVDA, JAWS, Narrador).
+- **Aritmética Inteligente**: Eliminação de ruídos de ponto flutuante em funções trigonométricas (ex: `sin(pi)` retorna `0.0`).
+- **Módulos Avançados**: Suporte completo para Álgebra Linear (matrizes) e Definição de Funções.
+- **Persistência de Sessão**: Registro automático de cálculos em arquivos de log para auditoria e revisão.
 
-Permite a avaliação de expressões matemáticas complexas diretamente na linha de comando.
+## 🛠️ Tecnologias Utilizadas
 
-- **Funções Trigonométricas:** `sin()`, `cos()`, `tan()`.
-- **Modos de Ângulo:** Suporte para Graus (`modo gra`) e Radianos (`modo rad`).
-- **Funções Matemáticas:** `log()` (base 10), `ln()` (logaritmo natural), `log2()` (base 2), `sqrt()` (raiz quadrada), `exp()`, `pow()`.
-- **Constantes:** `pi` e `e`.
-- **Memória:** A variável `ans` armazena o último resultado para ser usado em cálculos subsequentes.
+- **Python 3.11+**: Linguagem base.
+- **NumPy**: Motor de processamento para álgebra linear.
+- **PyInstaller**: Utilizado para gerar os executáveis independentes.
 
-### 2. Calculadora de Matrizes
+## 📂 Estrutura do Projeto
 
-Um conjunto de ferramentas para álgebra linear, ativado com o prefixo `mat`.
-
-- **Definição de Matrizes:** Crie e armazene matrizes com nomes personalizados (ex: `mat def A`).
-- **Operações:** Adição (`mat add`), subtração (`mat sub`), multiplicação (`mat mult`).
-- **Cálculos:** Determinante (`mat det`), transposta (`mat trans`), inversa (`mat inv`).
-- **Gerenciamento:** Liste todas as matrizes (`mat lista`), imprima uma específica (`mat print A`) ou limpe a memória (`mat clear`).
-- **Memória:** A matriz `ANS` guarda o resultado da última operação.
-
-### 3. Recursos de Acessibilidade
-
-- **Saída Amigável:** A impressão de matrizes é formatada para ser clara e legível por leitores de tela, descrevendo as dimensões e lendo linha por linha.
-- **Comandos Claros:** A sintaxe é simples e consistente, com mensagens de erro detalhadas para guiar o usuário.
-
-### 4. Comandos Gerais
-
-- `help`: Exibe a ajuda completa para os modos básico e de matriz.
-- `status`: Mostra o modo de ângulo atual e os últimos resultados salvos (`ans` e `ANS`).
-- `arquivo [nome]`: Salva um log de todas as expressões e resultados em um arquivo de texto.
-- `sair`: Encerra a aplicação.
-
-## Como Usar
-
-1.  **Pré-requisitos:** Instalar o executavel da calculadora em um lugar de fácil acesso.
-
-2.  **Executar a Calculadora**
-
-### Exemplos de Uso
-
-**Modo Básico:**
-
-```
-[RAD]> (sin(pi/2) + 5) * 2
-Resultado: 12.0
-[RAD]> ans / 3
-Resultado: 4.0
+```text
+calculadora-acessivel/
+├── modules/            # Lógica dos submódulos (Matrizes, Funções, Base)
+├── executavel/         # Versão compilada para Windows (.exe)
+├── main.py             # Ponto de entrada e orquestração do CLI
+├── MANUAL_DO_USUARIO.md # Documentação detalhada para o usuário final
+└── README.md           # Visão geral do projeto
 ```
 
-**Modo Matriz:**
+## 🚀 Como Começar
 
+### Pré-requisitos
+- Python 3.11 ou superior instalado.
+- Biblioteca NumPy instalada: `pip install numpy`
+
+### Execução Direta
+```bash
+python main.py
 ```
-[RAD]> mat def A
-Digite o número de linhas para a Matriz A: 2
-Digite o número de colunas para a Matriz A: 2
-Agora, insira os valores para a Matriz A.
-Para cada linha, digite os 2 elementos separados por espaço.
-Digite os elementos da linha 1: 1 2
-Digite os elementos da linha 2: 3 4
-Matriz A (2x2) salva com sucesso.
 
-[RAD]> mat det A
-Resultado (escalar): -2.0
+### Usando o Executável
+Navegue até a pasta `executavel/` e rode o arquivo `calculadora_acessivel.exe`. Não é necessário instalar o Python neste caso.
 
-[RAD]> mat inv A
+## 📖 Documentação
 
-Matriz 'ANS' (2 linhas por 2 colunas):
-  Linha 1: -2.0 1.0
-  Linha 2: 1.5 -0.5
-```
+Para instruções detalhadas de todos os comandos (básico, `mat` e `fn`), consulte o nosso [Manual do Usuário](MANUAL_DO_USUARIO.md).
+
+## 🤝 Contribuição
+
+Contribuições que melhorem a experiência de acessibilidade são muito bem-vindas!
+1. Faça um Fork do projeto.
+2. Crie uma Branch para sua feature (`git checkout -b feature/NovaFuncao`).
+3. Comite suas mudanças.
+4. Abra um Pull Request.
+
+---
+*Desenvolvido com foco em inclusão e precisão técnica.*

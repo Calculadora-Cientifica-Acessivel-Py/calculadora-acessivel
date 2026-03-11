@@ -1,7 +1,8 @@
 import numpy as np
-import ajuda             # Importa o arquivo ajuda.py
-import calc_basica       # Importa o arquivo calc_basica.py
-import calc_matriz       # Importa o arquivo calc_matriz.py
+import modules.ajuda as ajuda             # Importa o arquivo ajuda.py
+import modules.calc_basica as calc_basica       # Importa o arquivo calc_basica.py
+import modules.calc_matriz as calc_matriz       # Importa o arquivo calc_matriz.py
+import modules.calc_funcoes as calc_funcoes      # Importa o arquivo calc_funcoes.py
 
 def calculadora_principal():
     """
@@ -15,6 +16,9 @@ def calculadora_principal():
     # --- Estado da Calculadora de Matriz ---
     matrizes_armazenadas = {}
     ultimo_resultado_matriz = None
+
+    # --- Estado da Calculadora de Funções ---
+    funcoes_armazenadas = {}
 
     print("Calculadora Acessível. Digite 'help' para ajuda ou 'sair' para encerrar.")
 
@@ -69,6 +73,7 @@ def calculadora_principal():
             # Verifica se 'ANS' existe no armazém
             ans_matriz = "Definido" if 'ANS' in matrizes_armazenadas else "Nenhum"
             print(f"Último resultado (matriz/ANS): {ans_matriz}")
+            print(f"Funções personalizadas: {len(funcoes_armazenadas)}")
             continue
         
         # --- Roteador: Envia o comando para o módulo correto ---
@@ -96,6 +101,19 @@ def calculadora_principal():
                 ultimo_resultado_matriz = None
                 matrizes_armazenadas.clear()
         
+        elif cmd_lower.startswith('fn '):
+            # Envia para o processador de funções
+            if cmd_lower == 'fn help':
+                ajuda.exibir_ajuda_funcao()
+                continue
+            
+            ultimo_resultado_basico = calc_funcoes.processar_comando_funcao(
+                expressao,
+                funcoes_armazenadas,
+                ultimo_resultado_basico,
+                modo_angulo
+            )
+
         else:
             # Envia para o processador básico
             ultimo_resultado_basico = calc_basica.processar_calculo_basico(

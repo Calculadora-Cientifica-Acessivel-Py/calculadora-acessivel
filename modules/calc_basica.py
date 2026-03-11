@@ -1,6 +1,7 @@
-﻿import math
+import math
 
 # --- Funções Trigonométricas (Modo Básico) ---
+# Voltamos à precisão total. O ruído é inerente ao ponto flutuante.
 
 def _sin(x, modo):
     if modo == 'gra':
@@ -16,6 +17,25 @@ def _tan(x, modo):
     if modo == 'gra':
         x = math.radians(x)
     return math.tan(x)
+
+def limpar_resultado(valor):
+    """
+    Trata ruídos de ponto flutuante (ex: 1.22e-16 -> 0 ou 0.9999999999999 -> 1).
+    Apenas se o valor for extremamente próximo de uma representação 'limpa'.
+    """
+    if not isinstance(valor, (int, float)):
+        return valor
+    
+    # Se for quase zero (menor que 1e-15)
+    if abs(valor) < 1e-15:
+        return 0.0
+    
+    # Se for quase um inteiro (ex: 0.9999999999999999)
+    res_arredondado = round(valor, 14)
+    if math.isclose(valor, res_arredondado, rel_tol=1e-15):
+        return res_arredondado
+    
+    return valor
 
 def processar_calculo_basico(expressao, ultimo_resultado_basico, modo_angulo, log_file):
     """
@@ -34,14 +54,19 @@ def processar_calculo_basico(expressao, ultimo_resultado_basico, modo_angulo, lo
     }
 
     try:
-        resultado = eval(expressao, {"__builtins__": {}}, ambiente_basico)
+        # Avalia a expressão com precisão total
+        resultado_bruto = eval(expressao, {"__builtins__": {}}, ambiente_basico)
+        
+        # Limpa apenas para exibição e armazenamento do ans
+        resultado = limpar_resultado(resultado_bruto)
+        
         print(f"Resultado: {resultado}")
 
         if log_file:
             with open(log_file, "a", encoding="utf-8") as f:
                 f.write(f"[{modo_angulo.upper()}] {expressao} = {resultado}\n")
         
-        return resultado # Retorna o novo resultado em caso de sucesso
+        return resultado 
 
     # Erros específicos do modo básico
     except ZeroDivisionError:
@@ -59,4 +84,4 @@ def processar_calculo_basico(expressao, ultimo_resultado_basico, modo_angulo, lo
     except Exception as e:
         print(f"Erro inesperado no cálculo: {e}")
     
-    return ultimo_resultado_basico # Retorna o resultado antigo em caso de falha
+    return ultimo_resultado_basico

@@ -1,5 +1,5 @@
 def exibir_ajuda_basica():
-    """Imprime o guia de ajuda para os modos básico e de matriz."""
+    """Imprime o guia de ajuda para os modos básico, de matriz e de funções."""
     print("\n--- Ajuda da Calculadora Acessível ---")
     
     print("\nModo Básico (Expressões):")
@@ -12,9 +12,11 @@ def exibir_ajuda_basica():
     print("  mat help      : Mostra todos os comandos de matriz.")
     print("  mat def [NOME]: Inicia o assistente para criar uma matriz (ex: 'mat def A').")
     print("  mat lista     : Lista todas as matrizes salvas (ex: A, B, ANS).")
-    print("  mat add [A]: Soma duas matrizes (ex: 'mat add A B').")
-    print("  mat trans [A] : Calcula a transposta (ex: 'mat trans ANS').")
-    print("... (veja 'mat help' para sub, mult, det, inv).")
+    
+    print("\nModo Funções (prefixo 'fn'):")
+    print("  fn help       : Mostra todos os comandos de funções.")
+    print("  fn def f(x)=..: Define uma nova função (ex: 'fn def f(x) = x**2').")
+    print("  fn f(val)     : Avalia a função f no ponto val (ex: 'fn f(5)').")
 
     print("\nComandos Gerais:")
     print("  help          : Mostra esta ajuda.")
@@ -37,4 +39,16 @@ def exibir_ajuda_matriz():
     print("  mat det [A]      : Calcula o determinante de A (ex: mat det A).")
     print("  mat trans [A]    : Calcula a transposta de A (ex: mat trans A).")
     print("  mat inv [A]      : Calcula a inversa de A (ex: mat inv A).")
+    print("----------------------------------------\n")
+
+def exibir_ajuda_funcao():
+    """Imprime a ajuda específica para o modo de funções."""
+    print("\n--- Ajuda do Modo Funções ---")
+    print("Defina funções personalizadas para usar em seus cálculos.")
+    print("\nComandos:")
+    print("  fn def [f(x)] = [exp] : Define uma nova função (ex: fn def f(x) = x + 2).")
+    print("  fn [nome]([valor])    : Avalia a função salva no valor dado (ex: fn f(5)).")
+    print("  fn lista              : Lista todas as funções salvas.")
+    print("  fn clear              : Limpa todas as funções da memória.")
+    print("  fn help               : Exibe esta ajuda.")
     print("----------------------------------------\n")

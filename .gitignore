@@ -2,3 +2,8 @@ build
 dist
 build_exe.bat
 build_exe.ps1
+__pycache__/
+__pycache__
+*.pyc
+*.pyo
+*.pyd__pycache__
