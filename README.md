@@ -1,4 +1,4 @@
-# Calculadora Acessível ♿
+# Calculadora Científica Acessível para Deficientes Visuais 🧑‍🦯
 
 Uma calculadora de linha de comando (CLI) desenvolvida em Python, projetada especificamente para oferecer autonomia técnica a usuários de leitores de tela. O projeto une cálculos matemáticos avançados, álgebra linear e funções personalizadas com uma interface textual clara e semântica.
 

@@ -4,7 +4,7 @@ A **Calculadora Acessível** é uma aplicação de linha de comando (CLI) desenv
 
 ---
 
-## ♿ Compromisso com a Acessibilidade
+## 🧑‍🦯 Compromisso com a Acessibilidade
 
 Este manual e a aplicação foram projetados seguindo estas premissas:
 1.  **Navegação Previsível**: Comandos curtos e consistentes.
@@ -16,7 +16,7 @@ Este manual e a aplicação foram projetados seguindo estas premissas:
 
 ## 📖 Sumário
 - [Manual do Usuário: Calculadora Acessível](#manual-do-usuário-calculadora-acessível)
-  - [♿ Compromisso com a Acessibilidade](#-compromisso-com-a-acessibilidade)
+  - [🧑‍🦯 Compromisso com a Acessibilidade](#-compromisso-com-a-acessibilidade)
   - [📖 Sumário](#-sumário)
   - [1. Primeiros Passos](#1-primeiros-passos)
     - [Como Iniciar](#como-iniciar)
@@ -67,7 +67,7 @@ O resultado do último cálculo básico é salvo na variável `ans`.
 - Em seguida, digite `ans * 2`. O resultado será `40`.
 
 ### Funções e Constantes
-- **Constantes**: `pi` e `e`.
+- **Constantes matemática**: `pi` e `e`, onde e refere-se ao número de Euler sendo e=2,718281828.
 - **Trigonometria**: `sin()`, `cos()`, `tan()`.
 - **Raiz e Potência**: `sqrt(16)` (raiz), `pow(2, 3)` (2 elevado a 3) ou `2**3`.
 - **Logaritmos**: `log(100)` (base 10), `ln(e)` (logaritmo natural).
